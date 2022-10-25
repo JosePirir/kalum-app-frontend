@@ -1,0 +1,28 @@
+<div class="card bg-dark text-white mt-5">
+    <div class="card-header">Nuevo Registro</div>
+    <hr>
+    <div class="card-body">
+        <form action="">
+            <div class="form-group row">
+                <label for="jornada-nombre" class="col-sm-2">Nombre</label>
+                <div class="col-sm-6">
+                    <input type="text" [(ngModel)] = "jornada.jornadaNombre" class="form-control" placeholder="Nombre de la jornada" name="jornada-nombre">
+                </div>
+            </div>
+            <div class="form-group row mt-2">
+                <label for="jornada-descripcion" class="col-sm-2">Descripcion</label>
+                <div class="col-sm-6">
+                    <input type="text" [(ngModel)] = "jornada.descripcion" class="form-control" placeholder="Descripcion de la jornada" name="jornada-descripcion">
+                </div>
+            </div>
+            <div class="form-group row ">
+                <div>
+                    <button class="btn btn-primary" (click)="guardar()" *ngIf="!jornada.jornadaId else elseBlock">Guardar</button>
+                    <ng-template #elseBlock>
+                        <button class="btn btn-primary" role="button" (click)="actualizar()">Actualizar</button>
+                    </ng-template>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
