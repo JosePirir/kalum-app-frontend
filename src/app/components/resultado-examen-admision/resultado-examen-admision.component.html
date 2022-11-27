@@ -1,0 +1,28 @@
+<div class="card border-primary mt-3">
+    <div class="card-header">Resultado Examen admisión</div>
+    <div class="card-body text-primary">
+        <h5>Listado disponible</h5>
+        <div class="mt-2 text-left">
+            <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/resultadoExamenAdmision/form']">Crear Resultado Examen Admision</button>
+        </div>
+        <table class="table table-bordered table-stripped">
+            <thead>
+                <tr>
+                    <th>no Expediente</th>
+                    <th>Anio</th>
+                    <th>Descripcion</th>
+                    <th>Nota</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of resultadosExamenAdmision">
+                <tr>
+                    <td>{{item.noExpediente}}</td>
+                    <td>{{item.anio}}</td>
+                    <td>{{item.descripcion}}</td>
+                    <td>{{item.nota}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <app-paginador *ngIf="paginador" [paginador]="paginador" [urlEndPoint]="urlEndPoint"></app-paginador>
+    </div>
+</div>

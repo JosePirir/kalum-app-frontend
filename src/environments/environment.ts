@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:5008/v1/KalumManagement'
+  //baseUrl: 'http://localhost:5008/v1/KalumManagement',
+  baseUrl: 'http://localhost:5070/v1/KalumManagement',
+  baseUrlAuth: 'http://localhost:5006/KalumAutenticacion/v1',
+  roles: 'http://schemas.microsoft.com/ws/2008/06/identity/claims/role'
 };
 
 /*

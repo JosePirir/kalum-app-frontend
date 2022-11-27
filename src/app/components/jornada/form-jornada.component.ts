@@ -42,7 +42,7 @@ export class FormJornadaComponent implements OnInit {
       this.router.navigate(['/jornada']);
     });
     },e=>{
-      Swal.fire({icon: 'error', title:'Jornada', text:e.message});
+      Swal.fire({icon: 'error', title:'Jornada', text:e});
     })
   }
 

@@ -2,7 +2,7 @@
     <div class="card-header">Jornada</div>
     <div class="card-body text-primary">
         <h5>Listado disponible</h5>
-        <div class="my-2 text-left">
+        <div class="mt-2 text-left">
             <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/jornada/form']">Crear Jornada</button>
         </div>
         <table class="table table-bordered table-striped">
@@ -10,7 +10,7 @@
                 <tr>
                     <th>Jornada</th>
                     <th>Descripcion</th>
-                    <th>Elimlinar</th>
+                    <th>Eliminar</th>
                     <th>Editar</th>
                 </tr>
             </thead>
@@ -18,7 +18,7 @@
                     <tr>
                         <td>{{item.jornadaNombre}}</td>
                         <td>{{item.descripcion}}</td>
-                        <td><button type="button" name="eliminar" class="btn btn-danger btn-sm" (click)="eliminar(item)">Elimlinar</button></td>
+                        <td><button type="button" name="eliminar" class="btn btn-danger btn-sm" (click)="eliminar(item)">Eliminar</button></td>
                         <td><button type="button" name="editar" class="btn btn-primary btn-sm" [routerLink]="['/jornada/form',item.jornadaId]">Editar</button></td>
                     </tr>
                 </tbody>

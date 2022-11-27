@@ -1,7 +1,7 @@
 <ul class="pagination" *ngIf="paginas.length > 0">
-    <li class="page-item" *ngIf="paginador.number > 0">
+    <!--<li class="page-item" *ngIf="paginador.number > 0">
         <a class="page-link" routerLink="/{{urlEndPoint}}/page/{{paginador.number-1}}">&laquo;</a>
-    </li>
+    </li>-->
     <li [ngClass] = "paginador.first? 'disabled page-item': 'page-item'">
         <a class="page-link" routerLink="/{{urlEndPoint}}/page/0">Primera</a>
     </li>
@@ -15,4 +15,4 @@
     <li class="page-item" *ngIf="paginador.number < paginador.totalPages-1">
     </li>
 </ul>
-<a class="page-link" routerLink="/{{urlEndPoint}}/page/{{paginador.number+1}}">&laquo;</a>
+<!--<a class="page-link" routerLink="/{{urlEndPoint}}/page/{{paginador.number+1}}">&laquo;</a>-->

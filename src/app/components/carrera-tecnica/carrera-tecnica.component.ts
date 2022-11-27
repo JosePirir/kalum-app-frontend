@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CarreraTecnica } from './carrera-tecnica.model';
 import { CarreraTecnicaService } from './carrera-tecnica.service';
 import Swal from "sweetalert2";
+import { AuthService } from '../login/auth.service';
 
 @Component({
   selector: 'app-carrera-tecnica',
@@ -15,7 +16,7 @@ export class CarreraTecnicaComponent implements OnInit {
   carrerasTecnicas : any[] =[];
   paginador: any;
 
-  constructor(private carreraTecnicaService: CarreraTecnicaService, private activateRoute: ActivatedRoute, private router: Router) { }
+  constructor(private carreraTecnicaService: CarreraTecnicaService, public authService: AuthService, private activateRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.activateRoute.paramMap.subscribe(params => {/*paramMap detecta si se envian unos datos o no*//*de string a entero signo +*/

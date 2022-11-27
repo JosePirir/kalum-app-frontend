@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms'; //logica de formularios con html
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -16,6 +16,12 @@ import { FormCarreraTecnicaComponent } from './components/carrera-tecnica/form-c
 import { JornadaComponent } from './components/jornada/jornada.component';
 import { FormJornadaComponent } from './components/jornada/form-jornada.component';
 import { FormUserRegisterComponent } from './components/login/form-user-register.component';
+import { ExamenAdmisionComponent } from './components/examen-admision/examen-admision.component';
+import { FormExamenAdmisionComponent } from './components/examen-admision/form-examen-admision.component';
+import { ResultadoExamenAdmisionComponent } from './components/resultado-examen-admision/resultado-examen-admision.component';
+import { FormResultadoExamenAdmisionComponent } from './components/resultado-examen-admision/form-resultado-examen-admision.component';
+import { TokenInterceptor } from './components/interceptors/token.interceptor';
+import { AuthGuard } from './components/login/guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,11 @@ import { FormUserRegisterComponent } from './components/login/form-user-register
     FormCarreraTecnicaComponent,
     JornadaComponent,
     FormJornadaComponent,
-    FormUserRegisterComponent
+    FormUserRegisterComponent,
+    ExamenAdmisionComponent,
+    FormExamenAdmisionComponent,
+    ResultadoExamenAdmisionComponent,
+    FormResultadoExamenAdmisionComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +48,7 @@ import { FormUserRegisterComponent } from './components/login/form-user-register
     APP_ROUTING,
     FormsModule //agregado para ngForm
   ],
-  providers: [HomeService],/*servicios*/
+  providers: [HomeService,{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true}],/*servicios*/
   bootstrap: [AppComponent]
 })
 

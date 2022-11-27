@@ -1,0 +1,38 @@
+<div class="card bg-dark text-white mt-5">
+    <div class="card-header">Nuevo Registro</div>
+    <hr>
+    <div class="card-body">
+        <form action="">
+            <div class="form-group row">
+                <label for="noExpediente" class="col-sm-2">No. Expediente</label>
+                <div class="col-sm-6">
+                    <input type="text" [(ngModel)]="resultadoExamenAdmision.noExpediente" class="form-control" placeholder="Fecha del examen de admision" name="noExpediente">
+                </div>
+            </div>
+            <div class="form-group row mt-2">
+                <label for="anio" class="col-sm-2">Año</label>
+                <div class="col-sm-6">
+                    <input type="text" [(ngModel)]="resultadoExamenAdmision.anio" class="form-control" placeholder="Año" name="anio">
+                </div>
+            </div>
+            <div class="form-group row mt-2">
+                <label for="descripcion" class="col-sm-2">Descripcion</label>
+                <div class="col-sm-6">
+                    <input type="text" [(ngModel)]="resultadoExamenAdmision.descripcion" class="form-control" placeholder="Descripcion" name="descripcion">
+                </div>
+            </div>
+            <div class="form-group row mt-2">
+                <label for="nota" class="col-sm-2">Nota</label>
+                <div class="col-sm-6">
+                    <input type="text" [(ngModel)]="resultadoExamenAdmision.nota" class="form-control" placeholder="Nota" name="nota">
+                </div>
+            </div>
+            <div class="form-group row mt-2">
+                    <button class="btn btn-primary" (click)="guardar()">Guardar</button>
+                    <!--<ng-template #elseBlock>
+                        <button class="btn btn-primary" role="button" (click)="actualizar()">Actualizar</button>
+                    </ng-template>-->
+            </div>
+        </form>
+    </div>
+</div>

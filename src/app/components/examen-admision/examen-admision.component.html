@@ -1,0 +1,26 @@
+<div class="card border-primary mt-3">
+    <div class="card-header">Examen admisión</div>
+    <div class="card-body text-primary">
+        <h5>Listado disponible</h5>
+        <div class="mt-2 text-left">
+            <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/examenAdmision/form']">Crear Examen Admision</button>
+        </div>
+        <table class="table table-bordered table-stripped">
+            <thead>
+                <tr>
+                    <th>Fecha Examen</th>
+                    <th>Eliminar</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let item of examenesAdmision">
+                <tr>
+                    <td>{{item.fechaExamen}}</td>
+                    <td><button type="button" name="eliminar" class="btn btn-danger btn-sm" (click)="eliminar(item)">Eliminar</button></td>
+                    <td><button type="button" name="editar" class="btn btn-primary btn-sm" [routerLink]="['/examenAdmision/form/',item.examenId]">Editar</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <app-paginador *ngIf="paginador" [paginador]="paginador" [urlEndPoint]="urlEndPoint"></app-paginador>
+    </div>
+</div>
