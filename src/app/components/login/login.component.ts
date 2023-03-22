@@ -17,12 +17,12 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    this.usuario.email = 'jpirir@kinal.edu.gt';
+    this.usuario.username = 'jpirir@kinal.edu.gt';
     this.usuario.password = 'AspNet.2022';
   }
 
   login(): void{
-    if((this.usuario.email == null || this.usuario.password == null) || (this.usuario.email.length === 0 || this.usuario.password.length === 0)){
+    if((this.usuario.username == null || this.usuario.password == null)){
       Swal.fire({
         icon: 'error',
         title: 'Login ERROR',

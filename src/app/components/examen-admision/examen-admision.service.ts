@@ -45,4 +45,8 @@ export class ExamenAdmisionService {
       })})
     )
   }
+
+  getListaExamenesAdmision(): Observable<any> {
+    return this.httpClient.get<any[]>(`${this.endPoint}/examenAdmision/`);
+  }
 }

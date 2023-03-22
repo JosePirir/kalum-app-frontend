@@ -3,6 +3,7 @@ import { Jornada } from './jornada.model';
 import {Router, ActivatedRoute} from '@angular/router';
 import { JornadaService } from './jornada.service';
 import Swal from 'sweetalert2';
+import { AuthService } from '../login/auth.service';
 
 @Component({
   selector: 'app-jornada',
@@ -17,7 +18,7 @@ export class JornadaComponent implements OnInit {
   jornadas: any[] = [];
   paginador: any;
 
-  constructor(private jornadaService : JornadaService, private activatedRoute: ActivatedRoute) { }
+  constructor(private jornadaService : JornadaService, public authService: AuthService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {

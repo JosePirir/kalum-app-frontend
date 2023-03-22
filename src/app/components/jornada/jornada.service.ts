@@ -39,6 +39,10 @@ export class JornadaService {
     )
   }
 
+  getListaJornadas(): Observable<any>{
+    return this.httpClient.get<any[]>(`${this.endPoint}/Jornada`);
+  }
+
   deleteJornada(jornadaId:string):Observable<Jornada>{
     return this.httpClient.delete<Jornada>(`${this.endPoint}/Jornada/${jornadaId}`).pipe(
       catchError(e => {return throwError(()=>{

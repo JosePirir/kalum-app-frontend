@@ -22,6 +22,8 @@ import { ResultadoExamenAdmisionComponent } from './components/resultado-examen-
 import { FormResultadoExamenAdmisionComponent } from './components/resultado-examen-admision/form-resultado-examen-admision.component';
 import { TokenInterceptor } from './components/interceptors/token.interceptor';
 import { AuthGuard } from './components/login/guards/auth.guard';
+import { AspiranteComponent } from './components/aspirante/aspirante.component';
+import { FormAspiranteComponent } from './components/aspirante/aspirante-form.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { AuthGuard } from './components/login/guards/auth.guard';
     ExamenAdmisionComponent,
     FormExamenAdmisionComponent,
     ResultadoExamenAdmisionComponent,
-    FormResultadoExamenAdmisionComponent
+    FormResultadoExamenAdmisionComponent,
+    AspiranteComponent,
+    FormAspiranteComponent
   ],
   imports: [
     BrowserModule,

@@ -33,7 +33,6 @@ export class CarreraTecnicaComponent implements OnInit {
       this.carreraTecnicaService.getCarrerasTecnicas(page).subscribe(response =>{
         this.carrerasTecnicas = response.content as CarreraTecnica[]; /*pedir el valor content del json*/
         this.paginador = response;
-        console.log(this.carrerasTecnicas)
       })
     })  
   }
@@ -68,7 +67,10 @@ export class CarreraTecnicaComponent implements OnInit {
       reverseButtons:true
     }).then(resultado=>{
       if(resultado.isConfirmed){
-        Swal.fire({
+        if(this.authService.hasRole('ROLE_USER')) {
+          this.router.navigate(['/aspirante/form']);
+        }
+        /*Swal.fire({
           title: 'Registro de usuario',
           text: `Tienes una cuenta de usuario con nosotros?`,
           icon: 'question',
@@ -83,7 +85,7 @@ export class CarreraTecnicaComponent implements OnInit {
           else{
             this.router.navigate(['/usuario/form']);
           }
-        });
+        });*/
       }
     })
   }

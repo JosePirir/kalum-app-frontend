@@ -18,7 +18,7 @@
                     <tr>
                         <td>{{item.nombre}}</td>
                         <td *ngIf="authService.hasRole('ROLE_USER')"><button type="button" name="asignar" class="btn btn-secondary btn-sm" (click)="asignar(item)">Asignar</button></td>
-                        <td *ngIf="authService.hasRole('ROLE_ADMIN')"><button type="button" name="elimlinar" class="btn btn-danger btn-sm" (click)="eliminar(item)">Elimlinar</button></td>
+                        <td *ngIf="authService.hasRole('ROLE_ADMIN')"><button type="button" name="elimlinar" class="btn btn-danger btn-sm" (click)="eliminar(item)">Eliminar</button></td>
                         <td *ngIf="authService.hasRole('ROLE_ADMIN')"><button type="button" name="editar" class="btn btn-primary btn-sm" [routerLink]="['/carreraTecnica/form',item.carreraId]">Editar</button></td>
                     </tr>
                 </tbody>

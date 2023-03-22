@@ -1,0 +1,27 @@
+<div class="card border-primary mt-3">
+    <div class="card-header">Aspirante</div>
+    <div class="card-body text-primary">
+        <h5>Listado disponible</h5>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>No. Expediente</th>
+                    <th>Apellidos</th>
+                    <th>Nombres</th>
+                    <th>E-mail</th>
+                    <th>Estatus</th>
+                </tr>
+            </thead>
+                <tbody *ngFor="let item of aspirantes">
+                    <tr>
+                        <td>{{item.noExpediente}}</td>
+                        <td>{{item.apellidos}}</td>
+                        <td>{{item.nombres}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.estatus}}</td>
+                    </tr>
+                </tbody>
+        </table>
+        <app-paginador *ngIf="paginador" [paginador] = "paginador" [urlEndPoint]="urlEndPoint"></app-paginador><!--"paginador hace referencia al paginador del component"-->
+    </div>
+</div>

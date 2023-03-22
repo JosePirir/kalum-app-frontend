@@ -14,6 +14,8 @@ import { ResultadoExamenAdmisionComponent } from './components/resultado-examen-
 import { FormResultadoExamenAdmisionComponent } from './components/resultado-examen-admision/form-resultado-examen-admision.component';
 import { AuthGuard } from './components/login/guards/auth.guard';
 import { RoleGuard } from './components/login/guards/role.guard';
+import { FormAspiranteComponent } from './components/aspirante/aspirante-form.component';
+import { AspiranteComponent } from './components/aspirante/aspirante.component';
 
 const APP_ROUTES: Routes = [ /*primero esto luego se importa */ 
     { path: 'home', component: HomeComponent},
@@ -38,7 +40,9 @@ const APP_ROUTES: Routes = [ /*primero esto luego se importa */
     { path: 'resultadoExamenAdmision/form/:id', component: FormResultadoExamenAdmisionComponent},
     { path: 'login', component: LoginComponent},
     { path: 'usuario/form', component: FormUserRegisterComponent},
-    { path: 'aspirante/form', component: FormUserRegisterComponent, canActivate:[AuthGuard,RoleGuard], data:{role:'ROLE_USER'}},
+    { path: 'aspirante/form', component: FormAspiranteComponent, canActivate:[AuthGuard,RoleGuard], data:{role:'ROLE_USER'}},
+    { path: 'aspirante/page/:page', component:AspiranteComponent},
+    { path: 'aspirante', component:AspiranteComponent},
     { path: '**', pathMatch: 'full', redirectTo: 'home'}
 
 ]

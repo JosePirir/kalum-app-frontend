@@ -10,16 +10,16 @@
                 <tr>
                     <th>Jornada</th>
                     <th>Descripcion</th>
-                    <th>Eliminar</th>
-                    <th>Editar</th>
+                    <th *ngIf="authService.hasRole('ROLE_ADMIN')">Eliminar</th>
+                    <th *ngIf="authService.hasRole('ROLE_ADMIN')">Editar</th>
                 </tr>
             </thead>
                 <tbody *ngFor="let item of jornadas">
                     <tr>
                         <td>{{item.jornadaNombre}}</td>
                         <td>{{item.descripcion}}</td>
-                        <td><button type="button" name="eliminar" class="btn btn-danger btn-sm" (click)="eliminar(item)">Eliminar</button></td>
-                        <td><button type="button" name="editar" class="btn btn-primary btn-sm" [routerLink]="['/jornada/form',item.jornadaId]">Editar</button></td>
+                        <td *ngIf="authService.hasRole('ROLE_ADMIN')"><button type="button" name="eliminar" class="btn btn-danger btn-sm" (click)="eliminar(item)">Eliminar</button></td>
+                        <td *ngIf="authService.hasRole('ROLE_ADMIN')"><button type="button" name="editar" class="btn btn-primary btn-sm" [routerLink]="['/jornada/form',item.jornadaId]">Editar</button></td>
                     </tr>
                 </tbody>
         </table>
